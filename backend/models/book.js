@@ -1,4 +1,4 @@
-const {model, Schema} =require('mongoose');
+const {Schema, model} =require('mongoose');
 
 
 const BookSchema = new Schema({
@@ -7,8 +7,6 @@ const BookSchema = new Schema({
     isbn: {type: String, required: true},
     imagePath: {type: String, required: true},
     created_at: {type: Date, default: Date.now}
-})
+});
 
-
-
-module.exports('Book', BookSchema);
+module.exports = model('Book', BookSchema);
