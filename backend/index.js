@@ -7,6 +7,7 @@ const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
+const cors = require('cors');
 //Initializations
 const app = express();
 require('./database');
@@ -30,7 +31,7 @@ app.use(express.urlencoded({
     extended: false
 }));
 app.use(express.json());
-
+app.use(cors());
 
 //routes
 app.use('/api/books', require('./routes/books'));
